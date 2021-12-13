@@ -7,6 +7,7 @@ import requests
 import urllib3
 import json
 import datetime
+import base64
 
 """乐健体育模拟跑步分析"""
 """author:sake"""
