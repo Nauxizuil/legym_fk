@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import random           
 import sys
 import time
@@ -75,7 +77,7 @@ class LegymPost:
         url = 'https://cpes.legym.cn/education/app/activity/getActivityList'
         data = {"name":"","campus":"","page":1,"size":10,"state":"","topicId":"","week":""}
         r = requests.post(url=url, headers=self.headers, data=json.dumps(data),verify=False)
-        print(json.dumps(r.json(), ensure_ascii=False))
+        print(json.dumps(r.json(), ensure_ascii=False).encode("UTF-8"))
         activityList:list = r.json()['data']['items']
         lst = [item[key] for item in activityList for key in item]
         return lst
