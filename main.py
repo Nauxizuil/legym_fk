@@ -104,9 +104,9 @@ class LegymPost:
     #活动批量报名签到
     def Activity(self):
         lst = app.getActivityList()
-        for i in range(0,int(len(lst)/20)):
-            #app.signUpActivity(lst[20*i])
-            #app.signInActivity(lst[20*i])   
+        #for i in range(0,int(len(lst)/20)):
+        #    app.signUpActivity(lst[20*i])
+        #    app.signInActivity(lst[20*i])   
 
     #发送跑步数据
     def run_route(self) -> None:
