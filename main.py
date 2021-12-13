@@ -75,6 +75,7 @@ class LegymPost:
         url = 'https://cpes.legym.cn/education/app/activity/getActivityList'
         data = {"name":"","campus":"","page":1,"size":10,"state":"","topicId":"","week":""}
         r = requests.post(url=url, headers=self.headers, data=json.dumps(data),verify=False)
+        print(r);
         activityList:list = r.json()['data']['items']
         lst = [item[key] for item in activityList for key in item]
         return lst
@@ -104,8 +105,8 @@ class LegymPost:
     def Activity(self):
         lst = app.getActivityList()
         for i in range(0,int(len(lst)/20)):
-            app.signUpActivity(lst[20*i])
-            app.signInActivity(lst[20*i])   
+            #app.signUpActivity(lst[20*i])
+            #app.signInActivity(lst[20*i])   
 
     #发送跑步数据
     def run_route(self) -> None:
@@ -150,5 +151,5 @@ if __name__ == "__main__":
     app=LegymPost()
     app.__init__()          #登录
     app.Activity()          #签到
-    app.run_route()         #跑步
+    #app.run_route()         #跑步
     
