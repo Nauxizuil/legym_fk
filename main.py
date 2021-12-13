@@ -75,7 +75,7 @@ class LegymPost:
         url = 'https://cpes.legym.cn/education/app/activity/getActivityList'
         data = {"name":"","campus":"","page":1,"size":10,"state":"","topicId":"","week":""}
         r = requests.post(url=url, headers=self.headers, data=json.dumps(data),verify=False)
-        print(r);
+        print(json.dumps(r.json(), encoding="utf-8", ensure_ascii=False))
         activityList:list = r.json()['data']['items']
         lst = [item[key] for item in activityList for key in item]
         return lst
